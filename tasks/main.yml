@@ -31,7 +31,7 @@
   service:
     name: docker
     state: "{{ docker_service_state }}"
-    enabled: "{{ docker_service_enabled }}"
+    use: service
   ignore_errors: "{{ ansible_check_mode }}"
 
 - name: Ensure handlers are notified now to avoid firewall conflicts.
