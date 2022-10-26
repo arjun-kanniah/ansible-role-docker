@@ -5,3 +5,9 @@
     executable: /usr/bin/bash
   with_items: "{{ docker_users }}"
   become: yes
+  
+- name: Ensure docker group is activated.
+  ansible.builtin.shell: "newgrp docker"
+  args:
+    executable: /usr/bin/bash
+  become: yes
